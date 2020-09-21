@@ -1,0 +1,30 @@
+.login {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  transform: translateY(-5%);
+
+  .btn {
+    margin: auto;
+    padding: 20px 50px;
+  }
+}
+
+.logo {
+  animation: rotation 15s linear infinite;
+}
+
+.img {
+  cursor: pointer;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

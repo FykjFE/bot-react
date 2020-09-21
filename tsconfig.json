@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "umd",
+    "allowJs": true,
+    "jsx": "react",
+    "declaration": false,
+    "downlevelIteration": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      //      "pages": ["pages/*"],
+      //      "assets": ["assets/*"],
+      //      "styles": ["styles/*"],
+      //      "component": ["component/*"],
+      //      "router": ["router/*"]
+    },
+    "types": [
+      "node",
+      "webpack-env"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

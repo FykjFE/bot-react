@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.example {
+  display: grid;
+  background: linear-gradient(to bottom, white, black);
+  transition: all 0.5s;
+  user-select: none;
+}

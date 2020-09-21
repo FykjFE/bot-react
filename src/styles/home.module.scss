@@ -1,0 +1,11 @@
+.bg {
+  width: 200px;
+  height: 200px;
+  background: url('~assets/img/fy-test.png');
+  &-op {
+    color: aqua;
+  }
+}
+.op {
+  color: aqua;
+}
