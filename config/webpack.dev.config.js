@@ -25,6 +25,7 @@ module.exports = merge(common, {
     open: false,
     port: 3000,
     overlay: true,
+    inline: true,
     historyApiFallback: true,
     clientLogLevel: 'silent',
     quiet: true,
