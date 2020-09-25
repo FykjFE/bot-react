@@ -4,7 +4,7 @@ function Home(): JSX.Element {
   return (
     <div>
       <div>
-        <img src='https://sona.zzfzzf.com/img/undraw_docusaurus_mountain.svg' alt='' />
+        <img src='https://bot.zzfzzf.com/img/undraw_docusaurus_mountain.svg' alt='' />
       </div>
     </div>
   );
