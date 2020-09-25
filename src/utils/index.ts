@@ -1,7 +1,7 @@
 const baseUrl = (): string => {
   switch (process.env.NODE_ENV) {
     case 'development':
-      return '/api';
+      return 'https://api.zzfzzf.com';
     case 'test':
       return 'https://api.zzfzzf.com';
     default:

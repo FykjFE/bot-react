@@ -3,7 +3,7 @@ import { message } from 'antd';
 import baseUrl from './index';
 
 const http = axios.create({
-  baseURL: baseUrl,
+  baseURL: process.env.NODE_ENV === 'development' ? '/api' : baseUrl,
   timeout: 10000,
   headers: { 'Content-Type': 'application/json;charset=UTF-8' },
 });

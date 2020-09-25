@@ -2,6 +2,8 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.config');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const os = require('os');
+const baseUrl = 'https://api.zzfzzf.com';
+
 let needHost = '';
 try {
   let network = os.networkInterfaces();
@@ -33,7 +35,7 @@ module.exports = merge(common, {
     stats: 'errors-only',
     proxy: {
       '/api': {
-        target: 'http://localhost:8060',
+        target: baseUrl,
         changeOrigin: true,
         pathRewrite: { '^/api': '' },
       },
@@ -48,7 +50,6 @@ module.exports = merge(common, {
         messages: [
           ` Compiled successfully at:\n   - local:   http://localhost:3000\n   - network: http://${needHost}:3000`,
         ],
-        notes: ['开始愉快的编码吧！！！'],
       },
       clearConsole: true,
     }),
