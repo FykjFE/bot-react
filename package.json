@@ -22,8 +22,10 @@
     "build:test": "cross-env NODE_ENV=test webpack  --config config/webpack.prod.config.js",
     "format": "npm run prettier && npm run lint ",
     "lint": "eslint src/**/*.{tsx,ts}",
+    "test": "sh script/lint.sh",
     "lint:fix": "eslint --fix src/**/*.{tsx,ts,js}",
     "prettier": "prettier --write src/**/*.{tsx,ts}",
+    "lint:style": "stylelint --config .stylelintrc.js --fix src/**/*.scss",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.config.js --colors"
   },
   "husky": {
@@ -33,16 +35,13 @@
   },
   "lint-staged": {
     "src/**/*.{scss}": [
-      "stylelint --config .stylelintrc.js --fix",
-      "git add"
+      "stylelint --config .stylelintrc.js --fix"
     ],
     "src/**/*.{ts,tsx,js,json,scss,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "src/**/*.{ts,tsx,js}": [
-      "eslint --config .eslintrc.json",
-      "git add"
+      "eslint --config .eslintrc.json"
     ]
   },
   "dependencies": {
