@@ -47,6 +47,7 @@ const MainLayout: React.FC = ({ children }) => {
   }
 
   const renderMenu = (menu: Routes) => {
+    console.log(menu);
     if (menu.children) {
       return (
         <SubMenu

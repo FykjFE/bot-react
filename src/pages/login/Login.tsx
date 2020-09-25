@@ -7,6 +7,7 @@ import { POST_LOGIN } from 'services/user.service';
 import { User } from 'interfaces/user';
 import { useDispatch } from 'react-redux';
 import { ASYNC_SET_USER } from '../../store/constants/user';
+import { ASYNC_SET_ROUTES } from '../../store/constants/routes';
 
 function Login(): JSX.Element {
   const history = useHistory();
@@ -23,6 +24,7 @@ function Login(): JSX.Element {
       sessionStorage.setItem('token', String(token));
       sessionStorage.setItem('isLogin', String(true));
       dispatch({ type: ASYNC_SET_USER });
+      dispatch({ type: ASYNC_SET_ROUTES });
       history.push('/');
       setLoading(false);
     } else {

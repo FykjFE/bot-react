@@ -7,7 +7,3 @@ export const POST_LOGIN = (data: User): Promise<Res<any>> => {
 export const GET_USER_INFO = (): Promise<Res<any>> => {
   return http.get('/user/getUserInfo');
 };
-
-export const GET_ROUTERS = (): Promise<Res<any>> => {
-  return http.get('/user/getUserInfo');
-};
