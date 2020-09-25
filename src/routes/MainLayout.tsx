@@ -47,7 +47,6 @@ const MainLayout: React.FC = ({ children }) => {
   }
 
   const renderMenu = (menu: Routes) => {
-    console.log(menu);
     if (menu.children) {
       return (
         <SubMenu
@@ -119,7 +118,7 @@ const MainLayout: React.FC = ({ children }) => {
             )}
             <Dropdown overlay={menu}>
               <a>
-                <Icon name='UserOutlined' /> 你好，{user.user.username}
+                <Icon name='UserOutlined' /> 你好，{user.user.nickName}
                 <Icon name='DownOutlined' />
               </a>
             </Dropdown>
