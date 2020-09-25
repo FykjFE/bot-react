@@ -3,9 +3,9 @@ const baseUrl = (): string => {
     case 'development':
       return '/api';
     case 'test':
-      return 'http://rap2.taobao.org:38080/app/mock/266457';
+      return 'https://api.zzfzzf.com';
     default:
-      return 'https://ry.zzfzzf.com';
+      return 'https://api.zzfzzf.com';
   }
 };
 export default baseUrl();

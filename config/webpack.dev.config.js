@@ -33,7 +33,7 @@ module.exports = merge(common, {
     stats: 'errors-only',
     proxy: {
       '/api': {
-        target: 'https://ry.zzfzzf.com',
+        target: 'https://api.zzfzzf.com',
         changeOrigin: true,
         pathRewrite: { '^/api': '' },
       },

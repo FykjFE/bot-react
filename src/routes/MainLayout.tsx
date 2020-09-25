@@ -118,7 +118,7 @@ const MainLayout: React.FC = ({ children }) => {
             )}
             <Dropdown overlay={menu}>
               <a>
-                <Icon name='UserOutlined' /> 你好，{user.user?.nickName}
+                <Icon name='UserOutlined' /> 你好，{user.user.username}
                 <Icon name='DownOutlined' />
               </a>
             </Dropdown>
