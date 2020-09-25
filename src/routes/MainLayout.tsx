@@ -128,7 +128,7 @@ const MainLayout: React.FC = ({ children }) => {
             <Content>
               <div className={styles.content}>{children}</div>
             </Content>
-            <Footer> Sona ©{new Date().getFullYear()}</Footer>
+            <Footer> FykjFE ©{new Date().getFullYear()}</Footer>
           </Layout>
         </Layout>
       </Layout>

@@ -1,18 +1,18 @@
 {
-  "name": "sona",
+  "name": "bot-react",
   "version": "1.0.0",
   "description": "react 脚手架",
   "keywords": [
     "react",
     "cli"
   ],
-  "homepage": "https://github.com/zzfn/sona#readme",
+  "homepage": "https://github.com/FykjFE/bot-react#readme",
   "bugs": {
-    "url": "https://github.com/zzfn/sona/issues"
+    "url": "https://github.com/FykjFE/bot-react/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zzfn/sona.git"
+    "url": "git+https://github.com/FykjFE/bot-react.git"
   },
   "license": "MIT",
   "author": "zzf",
