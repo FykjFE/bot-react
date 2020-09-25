@@ -1,16 +1,11 @@
 export interface Routes {
   path: string;
   name: string;
-  meta: Meta;
+  icon: string;
   children: Routes[];
   hidden: boolean;
   component: string;
   alwaysShow: boolean;
-}
-
-interface Meta {
-  title: string;
-  icon: string;
 }
 
 export const SET_ROUTES = 'SET_ROUTES';

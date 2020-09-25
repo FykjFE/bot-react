@@ -51,12 +51,12 @@ const MainLayout: React.FC = ({ children }) => {
     if (menu.children) {
       return (
         <SubMenu
-          icon={menu.meta?.icon && <Icon name={menu.meta.icon} />}
+          icon={menu.icon && <Icon name={menu.icon} />}
           key={menu.path}
           title={<span>{menu.name}</span>}
         >
           {menu.children.map((item) => (
-            <Menu.Item icon={item.meta?.icon && <Icon name={item.meta?.icon} />} key={item.path}>
+            <Menu.Item icon={item.icon && <Icon name={item.icon} />} key={item.path}>
               {item.path && <Link to={item.path}>{item.name}</Link>}
             </Menu.Item>
           ))}
@@ -64,7 +64,7 @@ const MainLayout: React.FC = ({ children }) => {
       );
     } else {
       return (
-        <Menu.Item icon={menu.meta?.icon && <Icon name={menu.meta.icon} />} key={menu.path}>
+        <Menu.Item icon={menu.icon && <Icon name={menu.icon} />} key={menu.path}>
           {menu.path && <Link to={menu.path}>{menu.name}</Link>}
         </Menu.Item>
       );
