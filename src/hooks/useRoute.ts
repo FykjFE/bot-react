@@ -15,7 +15,7 @@ function useRoute(): Routes[] {
     } else {
       dispatch(clearRoute());
     }
-  }, [user.isLogin]);
+  }, [dispatch, user.isLogin]);
   return route;
 }
 

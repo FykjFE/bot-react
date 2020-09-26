@@ -1,7 +1,6 @@
 import React from 'react';
-import ErrorBoundary from './ErrorBoundary';
 
-interface IconProp extends Record<string, any> {
+interface IconProp {
   readonly name: string | undefined;
   readonly style?: Record<string, string | number>;
   readonly className?: string[] | string;
@@ -14,18 +13,15 @@ interface IconProp extends Record<string, any> {
  * @constructor
  */
 const Icon: React.FC<IconProp> = (props) => {
-  const { name, style, className, onClick, ...rest } = props;
+  const { name, style, className, onClick } = props;
   return (
     <>
-      {/*<ErrorBoundary>*/}
       {name &&
         React.createElement(require('@ant-design/icons')[name], {
           style,
           className,
           onClick,
-          ...rest,
         })}
-      {/*</ErrorBoundary>*/}
     </>
   );
 };

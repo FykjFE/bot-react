@@ -18,14 +18,13 @@
   "author": "zzf",
   "main": "src/index.tsx",
   "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.config.js --colors",
     "build": "cross-env NODE_ENV=production webpack  --config config/webpack.prod.config.js",
     "build:test": "cross-env NODE_ENV=test webpack  --config config/webpack.prod.config.js",
-    "format": "npm run prettier && npm run lint ",
     "lint": "eslint src/**/*.{tsx,ts}",
     "lint:fix": "eslint --fix src/**/*.{tsx,ts,js}",
-    "prettier": "prettier --write src/**/*.{tsx,ts}",
     "lint:style": "stylelint --config .stylelintrc.js --fix src/**/*.scss",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.config.js --colors"
+    "prettier": "prettier --write src/**/*.{tsx,ts}"
   },
   "husky": {
     "hooks": {
