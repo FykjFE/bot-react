@@ -31,16 +31,18 @@ declare module '*.scss' {
   const styles: Record<string, string>;
   export default styles;
 }
+
 interface BaseAction<T> {
   type: string;
   payload: T;
 }
 
-interface Res<T> extends Record<string, any> {
+interface Res<T> {
   code: number;
   data: T;
   message: string;
 }
+
 interface Req {
   id: string;
 }
