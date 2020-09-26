@@ -5,14 +5,12 @@ import NoMatch from '../components/NoMatch/NoMatch';
 import { Spin } from 'antd';
 import styles from 'styles/layout.module.scss';
 import useRoute from '../hooks/useRoute';
-import flatRoute from './flatRoute';
 import { Routes } from '../store/constants/routes';
 export default function Router(): JSX.Element {
   const [list, setList] = useState<Routes[]>([]);
   const route = useRoute();
   useEffect(() => {
-    const arr = flatRoute(route);
-    setList(arr);
+    setList(route);
   }, [route]);
   return (
     <BrowserRouter>

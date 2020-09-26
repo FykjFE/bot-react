@@ -10,6 +10,7 @@ import { Routes } from '../store/constants/routes';
 import { clearRoute } from 'store/actions/routes';
 import { useDispatch } from 'react-redux';
 import { logout } from '../store/actions/user';
+import list2tree from '../utils/list2tree';
 
 const { SubMenu } = Menu;
 const { Header, Footer, Sider, Content } = Layout;
@@ -89,7 +90,7 @@ const MainLayout: React.FC = ({ children }) => {
               )}
             </div>
             <Menu selectedKeys={[location.pathname]} theme='dark' mode='inline'>
-              {route.map((item) => renderMenu(item))}
+              {list2tree(route, { pid: 'parentId' }).map((item) => renderMenu(item))}
             </Menu>
           </Sider>
         </Affix>

@@ -48,7 +48,7 @@ function Menu(): JSX.Element {
       delete item.children;
       return item;
     });
-    const tree = list2tree(list, { id: 'menuId', pid: 'parentId' });
+    const tree = list2tree(list, { pid: 'parentId' });
     setDataSource(tree as never);
   }
 
@@ -57,7 +57,7 @@ function Menu(): JSX.Element {
   }, []);
   return (
     <div>
-      <Table rowKey={'menuId'} dataSource={dataSource} columns={columns} />
+      <Table rowKey={'id'} dataSource={dataSource} columns={columns} />
     </div>
   );
 }
