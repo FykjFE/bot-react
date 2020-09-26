@@ -2,7 +2,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.config');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const os = require('os');
-const baseUrl = 'https://api.zzfzzf.com';
+const baseUrl = 'http://localhost:8060';
 
 let needHost = '';
 try {

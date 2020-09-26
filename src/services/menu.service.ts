@@ -1,6 +1,8 @@
 import http from '../utils/http';
 
-export const GET_MENU_LIST = (params: Record<string, Record<string, string>>) => {
+export const GET_MENU_LIST = (
+  params: Record<string, Record<string, string>>,
+): Promise<Res<any>> => {
   return http.get('/menu/getMenus', { params });
 };
 export const GET_MENU_BY_ID = (params: Req): Promise<Res<any>> => {

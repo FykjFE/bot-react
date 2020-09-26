@@ -8,7 +8,7 @@ import Icon from '../../components/Icon';
 const columns = [
   {
     title: '菜单名称',
-    dataIndex: 'menuName',
+    dataIndex: 'name',
   },
   {
     title: '图标',
@@ -21,7 +21,8 @@ const columns = [
   },
   {
     title: '状态',
-    dataIndex: 'status',
+    dataIndex: 'isShow',
+    render: (text: number) => (text === 1 ? '显示' : '隐藏'),
   },
   {
     title: '操作',

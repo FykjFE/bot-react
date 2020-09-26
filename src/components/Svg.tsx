@@ -13,7 +13,7 @@ interface SvgProp {
 
 const Svg: React.FC<SvgProp> = (props) => {
   const { name, scale, width, height, className } = props;
-  const icon = all.find((item: string) => item === `./fy-${name}.svg`);
+  const icon = all.find((item: string) => item === `./${name}.svg`);
   return (
     <>
       {icon ? (
@@ -26,7 +26,7 @@ const Svg: React.FC<SvgProp> = (props) => {
       ) : (
         <img
           style={{ transform: `scale(${scale})`, width, height }}
-          src={reqSvgs('./fy-error.svg')}
+          src={reqSvgs('./error.svg')}
           alt='error.svg'
         />
       )}
