@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: npm ci
+        run: yarn install --immutable
 
       - name: lint
-        run: npm run lint
+        run: yarn lint
