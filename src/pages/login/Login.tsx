@@ -8,6 +8,8 @@ import { User } from 'interfaces/user';
 import { useDispatch } from 'react-redux';
 import { ASYNC_SET_USER } from '../../store/constants/user';
 import { ASYNC_SET_ROUTES } from '../../store/constants/routes';
+import { asyncSetUser } from '../../store/actions/user';
+import { asyncSetRoutes } from '../../store/actions/routes';
 
 function Login(): JSX.Element {
   const history = useHistory();
@@ -23,8 +25,8 @@ function Login(): JSX.Element {
     if (code === 0) {
       sessionStorage.setItem('token', String(token));
       sessionStorage.setItem('isLogin', String(true));
-      dispatch({ type: ASYNC_SET_USER });
-      dispatch({ type: ASYNC_SET_ROUTES });
+      dispatch(asyncSetUser());
+      dispatch(asyncSetRoutes());
       history.push('/');
       setLoading(false);
     } else {

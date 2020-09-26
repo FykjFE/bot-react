@@ -29,7 +29,7 @@ const columns = [
     key: 'action',
     render: (text: string, record: any): JSX.Element => (
       <Space size='middle'>
-        <MenuModal id={record.menuId}>
+        <MenuModal id={record.id}>
           <a>修改</a>
         </MenuModal>
         <a>新增</a>

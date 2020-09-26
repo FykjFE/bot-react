@@ -33,7 +33,7 @@ const MenuModal: React.FC<MenuInfo> = ({ id, children }) => {
         onCancel={() => setVisible(false)}
       >
         <Form form={form} layout='vertical' name='userForm' onFinish={doSave}>
-          <Form.Item name='menuName' label='名称' rules={[{ required: true }]}>
+          <Form.Item name='name' label='名称' rules={[{ required: true }]}>
             <Input />
           </Form.Item>
           <Form.Item name='icon' label='图标' rules={[{ required: true }]}>
