@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/reducers';
-import { ASYNC_SET_ROUTES, Routes } from '../store/constants/routes';
-import { clearRoute } from '../store/actions/routes';
+import { RootState } from 'store/reducers';
+import { Routes } from 'store/constants/routes';
+import { asyncSetRoutes, clearRoute } from 'store/actions/routes';
 
 function useRoute(): Routes[] {
   const user = useSelector((state: RootState) => state.user);
@@ -11,7 +11,7 @@ function useRoute(): Routes[] {
 
   useEffect(() => {
     if (user.isLogin) {
-      dispatch({ type: ASYNC_SET_ROUTES });
+      dispatch(asyncSetRoutes());
     } else {
       dispatch(clearRoute());
     }

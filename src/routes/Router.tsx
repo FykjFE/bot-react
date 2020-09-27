@@ -4,14 +4,15 @@ import MainLayout from './MainLayout';
 import NoMatch from '../components/NoMatch/NoMatch';
 import { Spin } from 'antd';
 import styles from 'styles/layout.module.scss';
-import useRoute from '../hooks/useRoute';
-import { Routes } from '../store/constants/routes';
+import { Routes } from 'store/constants/routes';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/reducers';
 export default function Router(): JSX.Element {
-  const [list, setList] = useState<Routes[]>([]);
-  const route = useRoute();
-  useEffect(() => {
-    setList(route);
-  }, [route]);
+  // const [list, setList] = useState<Routes[]>([]);
+  const route = useSelector<RootState>((state) => state.route);
+  // useEffect(() => {
+  //   setList(route);
+  // }, [route]);
   return (
     <BrowserRouter>
       <Suspense
@@ -29,7 +30,7 @@ export default function Router(): JSX.Element {
               sessionStorage.getItem('isLogin') === 'true' ? (
                 <MainLayout>
                   <Switch>
-                    {list.map((item: Routes) => (
+                    {route.map((item: Routes) => (
                       <Route
                         key={item.path}
                         exact
