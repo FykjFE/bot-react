@@ -14,7 +14,7 @@
 | chore     | src目录以外的修改|
 | ci     | CI/CD改动|
 
-# 举个例子
+> 例子
 ```shell
 git commit -m "feat: 添加登录功能"
 ```
