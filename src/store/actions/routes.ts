@@ -10,7 +10,7 @@ export function setRoute(item: Routes[]): BaseAction<Routes[]> {
 export function clearRoute(): BaseAction<Routes[]> {
   return { type: SET_ROUTES, payload: [] };
 }
-export function asyncSetRoutes(): ThunkAction<void, any, undefined, Action<BaseAction<any>>> {
+export function asyncSetRoutes(): any {
   return async (dispatch: Dispatch) => {
     const { data } = await GET_MENU_LIST({});
     dispatch({

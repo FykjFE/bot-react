@@ -1,7 +1,7 @@
 import React, { ReactElement, Suspense } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import MainLayout from './MainLayout';
-import NoMatch from '../components/NoMatch/NoMatch';
+import NoMatch from '../components/NoMatch';
 import { Spin } from 'antd';
 import styles from 'styles/layout.module.scss';
 import { Routes } from 'store/constants/routes';
@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store/reducers';
 
 export default function Router(): JSX.Element {
-  const route = useSelector<RootState>((state) => state.user);
+  const route = useSelector((state: RootState) => state.route);
   return (
     <BrowserRouter>
       <Suspense
