@@ -25,7 +25,7 @@
     "lint:fix": "eslint --fix src/**/*.{tsx,ts,js}",
     "lint:style": "stylelint --config .stylelintrc.js --fix src/**/*.scss",
     "prettier": "prettier --write src/**/*.{tsx,ts}",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "husky": {
     "hooks": {
