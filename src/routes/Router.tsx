@@ -1,4 +1,4 @@
-import React, { ReactElement, Suspense, useEffect, useState } from 'react';
+import React, { ReactElement, Suspense } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import MainLayout from './MainLayout';
 import NoMatch from '../components/NoMatch/NoMatch';
@@ -7,12 +7,9 @@ import styles from 'styles/layout.module.scss';
 import { Routes } from 'store/constants/routes';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/reducers';
+
 export default function Router(): JSX.Element {
-  // const [list, setList] = useState<Routes[]>([]);
-  const route = useSelector<RootState>((state) => state.route);
-  // useEffect(() => {
-  //   setList(route);
-  // }, [route]);
+  const route = useSelector<RootState>((state) => state.user);
   return (
     <BrowserRouter>
       <Suspense
