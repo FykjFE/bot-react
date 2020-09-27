@@ -20,7 +20,8 @@
     },
     "types": [
       "node",
-      "webpack-env"
+      "webpack-env",
+      "jest"
     ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
