@@ -49,5 +49,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: lint
+      - name: jest
         run: npm run test
