@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Affix, Dropdown, Layout, Menu } from 'antd';
 import styles from 'styles/layout.module.scss';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import Svg from '../components/Svg';
 import Icon from '../components/Icon';
-import useUser from '../hooks/useUser';
-import useRoute from '../hooks/useRoute';
 import { Routes } from '../store/constants/routes';
 import { clearRoute } from 'store/actions/routes';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logout } from '../store/actions/user';
 import list2tree from '../utils/list2tree';
-import { RootState } from '../store/reducers';
+import useAuth from '../hooks/useAuth';
 
 const { SubMenu } = Menu;
 const { Header, Footer, Sider, Content } = Layout;
@@ -21,12 +19,8 @@ const MainLayout: React.FC = ({ children }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const [collapsed, setCollapsed] = useState(false);
-  const [list, setList] = useState<any[]>([]);
-  const user = useUser();
-  const route = useSelector((state: RootState) => state.route);
-  useEffect(() => {
-    setList(list2tree(route, { pid: 'parentId' }));
-  }, [route]);
+  const { user, route } = useAuth();
+  const list = useMemo(() => list2tree(route, { pid: 'parentId' }), [route]);
   const menu = (
     <Menu>
       <Menu.Item>
@@ -124,7 +118,7 @@ const MainLayout: React.FC = ({ children }) => {
             )}
             <Dropdown overlay={menu}>
               <a>
-                <Icon name='UserOutlined' /> 你好，{user.user.nickName}
+                {/*<Icon name='UserOutlined' /> 你好，{user.info.nickName}*/}
                 <Icon name='DownOutlined' />
               </a>
             </Dropdown>
