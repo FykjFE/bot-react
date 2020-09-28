@@ -2,6 +2,11 @@ import React from 'react';
 import { Button, Result } from 'antd';
 import { RouteComponentProps } from 'react-router-dom';
 
+/**
+ * 404组件
+ * @param history
+ * @constructor
+ */
 const NoMatch: React.FC<RouteComponentProps> = ({ history }) => {
   return (
     <div>

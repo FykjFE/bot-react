@@ -11,6 +11,11 @@ interface SvgProp {
   readonly className?: string;
 }
 
+/**
+ * svg通用组件
+ * @param props
+ * @constructor
+ */
 const Svg: React.FC<SvgProp> = (props) => {
   const { name, scale, width, height, className } = props;
   const icon = all.find((item: string) => item === `./${name}.svg`);
