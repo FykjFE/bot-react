@@ -10,7 +10,7 @@ export function login(): BaseAction<User> {
   return { type: SET_USER_STATUS, payload: { isLogin: true } };
 }
 export function logout(): BaseAction<User> {
-  return { type: SET_USER_STATUS, payload: { isLogin: false } };
+  return { type: SET_USER_STATUS, payload: { isLogin: false, info: {} } };
 }
 
 export function asyncSetUser(): any {
