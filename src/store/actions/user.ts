@@ -14,7 +14,7 @@ export function asyncSetUser(): any {
     const { data } = await GET_USER_INFO();
     dispatch({
       type: SET_USER_INFO,
-      payload: data,
+      payload: { info: data },
     });
   };
 }
