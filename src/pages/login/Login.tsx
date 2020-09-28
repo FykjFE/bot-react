@@ -6,7 +6,8 @@ import Svg from 'components/Svg';
 import { POST_LOGIN } from 'services/user.service';
 import { User } from 'interfaces/user';
 import { useDispatch } from 'react-redux';
-import { login } from 'store/actions/user';
+import { login, logout } from 'store/actions/user';
+import { clearRoute } from '../../store/actions/routes';
 
 function Login(): JSX.Element {
   const history = useHistory();
@@ -32,9 +33,6 @@ function Login(): JSX.Element {
 
   useEffect(() => {
     sessionStorage.clear();
-    // todo 登录页清除登录和权限
-    // dispatch(logout());
-    // dispatch(clearRoute());
   }, []);
   return (
     <div className={styles.login}>
