@@ -1,7 +1,6 @@
 import { Routes, SET_ROUTES } from 'store/constants/routes';
 import { GET_MENU_LIST } from '../../services/menu.service';
-import { Action, Dispatch } from 'redux';
-import { ThunkAction } from 'redux-thunk';
+import { Dispatch } from 'redux';
 
 export function setRoute(item: Routes[]): BaseAction<Routes[]> {
   return { type: SET_ROUTES, payload: item };

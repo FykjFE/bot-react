@@ -1,8 +1,7 @@
 export interface User {
-  isLogin: boolean;
-  permissions: string[];
-  roles: string[];
-  user: Record<string, any>;
+  isLogin?: boolean;
+  info?: any;
 }
-export const SET_USER = 'SET_USER';
-export const ASYNC_SET_USER = 'ASYNC_SET_USER';
+export const SET_USER_INFO = 'SET_USER_INFO';
+export const SET_USER_STATUS = 'SET_USER_STATUS';
+export const ASYNC_GET_USER = 'ASYNC_GET_USER';

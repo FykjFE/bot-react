@@ -5,8 +5,7 @@ export interface Routes {
   children: Routes[];
   hidden: boolean;
   component: string;
-  alwaysShow: boolean;
 }
 
 export const SET_ROUTES = 'SET_ROUTES';
-export const ASYNC_SET_ROUTES = 'ASYNC_SET_ROUTES';
+export const ASYNC_GET_ROUTES = 'ASYNC_GET_ROUTES';

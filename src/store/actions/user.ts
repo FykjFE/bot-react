@@ -1,21 +1,21 @@
-import { SET_USER, User } from 'store/constants/user';
+import { SET_USER_INFO, SET_USER_STATUS, User } from 'store/constants/user';
 import { GET_USER_INFO } from 'services/user.service';
 import { Dispatch } from 'redux';
 
 export function setUser(user: User): BaseAction<User> {
-  return { type: SET_USER, payload: user };
+  return { type: SET_USER_INFO, payload: user };
 }
 
 export function logout(): BaseAction<User> {
-  return { type: SET_USER, payload: { isLogin: false, permissions: [], roles: [], user: {} } };
+  return { type: SET_USER_STATUS, payload: { isLogin: false } };
 }
 
 export function asyncSetUser(): any {
   return async (dispatch: Dispatch) => {
     const { data } = await GET_USER_INFO();
     dispatch({
-      type: SET_USER,
-      payload: { user: data, isLogin: true },
+      type: SET_USER_INFO,
+      payload: { user: data },
     });
   };
 }
