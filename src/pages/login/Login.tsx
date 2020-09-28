@@ -6,8 +6,7 @@ import Svg from 'components/Svg';
 import { POST_LOGIN } from 'services/user.service';
 import { User } from 'interfaces/user';
 import { useDispatch } from 'react-redux';
-import { login, logout } from 'store/actions/user';
-import { clearRoute } from '../../store/actions/routes';
+import { login } from 'store/actions/user';
 
 function Login(): JSX.Element {
   const history = useHistory();

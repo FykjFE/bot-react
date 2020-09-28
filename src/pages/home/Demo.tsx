@@ -1,8 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 function Demo({ name }: { name: string }): JSX.Element {
-  console.log('aa');
-  return useMemo(() => <div>{name}</div>, [name]);
+  return <h1>111</h1>;
 }
 
 export default Demo;
