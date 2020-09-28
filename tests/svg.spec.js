@@ -1,10 +1,11 @@
 import React from 'react';
-import Demo from '../src/pages/home/Demo';
 import { shallow } from 'enzyme';
+import Svg from '../src/components/Svg';
 
-describe('<Demo /> with no props', () => {
+describe('<Svg />', () => {
   it('test', () => {
-    const component = shallow(<Demo name={'1'} />);
+    const component = shallow(<Svg name={'error'} />);
+    console.log(component);
     const wrapper = component.find('h1');
     expect(wrapper.length).toBe(1);
   });

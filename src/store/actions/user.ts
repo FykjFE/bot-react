@@ -1,5 +1,5 @@
-import { SET_USER_INFO, SET_USER_STATUS, User } from 'store/constants/user';
-import { GET_USER_INFO } from 'services/user.service';
+import { SET_USER_INFO, SET_USER_STATUS, User } from '../constants/user';
+import { GET_USER_INFO } from '../../services/user.service';
 import { Dispatch } from 'redux';
 
 export function login(): BaseAction<User> {
