@@ -1,10 +1,12 @@
-import React from 'react';
-
+import React, { useMemo, useState } from 'react';
+import Demo from './Demo';
 function Home(): JSX.Element {
+  const [user, setUser] = useState({ name: 'aaa', age: 11 });
   return (
     <div>
       <div>
-        <img src='https://bot.zzfzzf.com/img/undraw_docusaurus_mountain.svg' alt='' />
+        <button onClick={() => setUser({ ...user, name: 's' })}>++</button>
+        <Demo name={'user.name'} />
       </div>
     </div>
   );

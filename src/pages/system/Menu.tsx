@@ -22,7 +22,8 @@ const columns = [
   {
     title: '状态',
     dataIndex: 'isShow',
-    render: (text: number) => (text === 1 ? '显示' : '隐藏'),
+    render: (text: number) =>
+      text === 1 ? <Tag color='purple'>显示</Tag> : <Tag color='volcano'>隐藏</Tag>,
   },
   {
     title: '操作',
