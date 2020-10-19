@@ -4,12 +4,14 @@ import MainLayout from './MainLayout';
 import NoMatch from '../components/NoMatch';
 import { Spin } from 'antd';
 import styles from 'styles/layout.module.scss';
-import { Routes } from 'store/constants/routes';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store/reducers';
+import { connect } from 'react-redux';
+import { Routes } from '../interfaces/custom.d';
 
-export default function Router(): JSX.Element {
-  const route = useSelector((state: RootState) => state.route);
+interface ConnectList {
+  route: Routes[];
+}
+
+const router: React.FC<ConnectList> = ({ route }) => {
   return (
     <BrowserRouter>
       <Suspense
@@ -47,4 +49,8 @@ export default function Router(): JSX.Element {
       </Suspense>
     </BrowserRouter>
   );
-}
+};
+
+export default connect(({ route }: ConnectList) => ({
+  route,
+}))(router);
