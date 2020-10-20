@@ -12,11 +12,9 @@
     "moduleResolution": "node",
     "baseUrl": "./src",
     "paths": {
-      //      "pages": ["pages/*"],
-      //      "assets": ["assets/*"],
-      //      "styles": ["styles/*"],
-      //      "component": ["component/*"],
-      //      "router": ["router/*"]
+      "component": [
+        "component/*"
+      ]
     },
     "types": [
       "node",
@@ -26,5 +24,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": [
+    "config",
+    "commitlint.config.js"
+  ]
 }

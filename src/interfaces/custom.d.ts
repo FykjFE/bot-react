@@ -47,7 +47,7 @@ interface Req {
   id: string;
 }
 
-export interface Routes {
+interface Routes {
   path: string;
   name: string;
   icon: string;

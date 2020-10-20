@@ -5,7 +5,6 @@ import NoMatch from '../components/NoMatch';
 import { Spin } from 'antd';
 import styles from 'styles/layout.module.scss';
 import { connect } from 'react-redux';
-import { Routes } from '../interfaces/custom.d';
 
 interface ConnectList {
   route: Routes[];
