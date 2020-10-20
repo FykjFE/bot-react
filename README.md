@@ -25,4 +25,13 @@ git commit -m "feat: 添加登录功能"
 - [ ] 封装表单
 - [ ] 封装表格
 - [ ] 分页助手
+> 社区优秀组件库
+1. `react-virtualized` 虚拟列表
+2. `react-lazyload` `react-loadable` `loadable-components` 懒加载
+3. `react-snap` `react-snapshot` 预加载
+
+> 性能优化建议
+
+1. 避免使用匿名函数
+2. 避免使用内联对象
 
