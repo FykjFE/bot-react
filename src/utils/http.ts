@@ -1,11 +1,14 @@
 import axios, { AxiosPromise } from 'axios';
 import { message } from 'antd';
 import baseUrl from './index';
-
+const msg = new Map([[405, '请求类型错误']]);
 const instance = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? '/api' : baseUrl,
   timeout: 10000,
   headers: { 'Content-Type': 'application/json;charset=UTF-8' },
+  validateStatus: function () {
+    return true;
+  },
 });
 instance.interceptors.request.use(
   (config) => {
@@ -20,8 +23,8 @@ instance.interceptors.request.use(
 );
 instance.interceptors.response.use(
   (response) => {
-    if (response.data.code !== 0) {
-      message.error(response.data.msg);
+    if (response.status !== 200) {
+      message.error(msg.get(response.status));
     }
     return response.data;
   },
