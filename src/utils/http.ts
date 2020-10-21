@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from 'axios';
+import axios, { AxiosPromise, AxiosRequestConfig, Method } from 'axios';
 import { message } from 'antd';
 import baseUrl from './index';
 const msg = new Map([[405, '请求类型错误']]);
@@ -33,6 +33,10 @@ instance.interceptors.response.use(
   },
 );
 
-export default function http(method: any, url: string, config?: any): AxiosPromise {
+export default function http(
+  method: Method,
+  url: string,
+  config?: AxiosRequestConfig,
+): AxiosPromise {
   return instance(url, { ...config, method });
 }
