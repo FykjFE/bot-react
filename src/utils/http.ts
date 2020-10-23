@@ -1,13 +1,16 @@
-import axios from 'axios';
+import axios, { AxiosPromise, AxiosRequestConfig, Method } from 'axios';
 import { message } from 'antd';
 import baseUrl from './index';
-
-const http = axios.create({
+const msg = new Map([[405, '请求类型错误']]);
+const instance = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? '/api' : baseUrl,
   timeout: 10000,
   headers: { 'Content-Type': 'application/json;charset=UTF-8' },
+  validateStatus: function () {
+    return true;
+  },
 });
-http.interceptors.request.use(
+instance.interceptors.request.use(
   (config) => {
     config.headers.Authorization = sessionStorage.getItem('token')
       ? `Bearer ${sessionStorage.getItem('token')}`
@@ -18,10 +21,10 @@ http.interceptors.request.use(
     return Promise.reject(error);
   },
 );
-http.interceptors.response.use(
+instance.interceptors.response.use(
   (response) => {
-    if (response.data.code !== 0) {
-      message.error(response.data.msg);
+    if (response.status !== 200) {
+      message.error(msg.get(response.status));
     }
     return response.data;
   },
@@ -29,4 +32,11 @@ http.interceptors.response.use(
     return Promise.reject(error);
   },
 );
-export default http;
+
+export default function http(
+  method: Method,
+  url: string,
+  config?: AxiosRequestConfig,
+): AxiosPromise {
+  return instance(url, { ...config, method });
+}
