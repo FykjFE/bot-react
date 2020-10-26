@@ -26,17 +26,18 @@ instance.interceptors.response.use(
     if (response.status !== 200) {
       message.error(msg.get(response.status));
     }
-    return response.data;
+    return response;
   },
   (error) => {
     return Promise.reject(error);
   },
 );
 
-export default function http(
+export default async function http(
   method: Method,
   url: string,
   config?: AxiosRequestConfig,
-): AxiosPromise {
-  return instance(url, { ...config, method });
+): Promise<Res<any>> {
+  const { data } = await instance(url, { ...config, method });
+  return data;
 }
