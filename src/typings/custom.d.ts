@@ -55,3 +55,20 @@ interface Routes {
   hidden: boolean;
   component: string;
 }
+
+/**
+ * @name: Pageation
+ * @current:当前页数
+ * @pageSize:每页条数
+ * @tatal:数据总数
+ * @showQuickJumper:是否可以快速跳转至某页
+ * @showSizeChanger:是否展示 pageSize 切换器
+ */
+interface Pageation {
+  current?: number;
+  pageSize?: number;
+  total?: number;
+  showQuickJumper?: boolean;
+  showSizeChanger?: boolean;
+  showTotal?: (total: number) => string;
+}
