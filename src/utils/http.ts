@@ -1,6 +1,7 @@
-import axios, { AxiosPromise, AxiosRequestConfig, Method } from 'axios';
+import axios, { AxiosRequestConfig, Method } from 'axios';
 import { message } from 'antd';
 import baseUrl from './index';
+
 const msg = new Map([[405, '请求类型错误']]);
 const instance = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? '/api' : baseUrl,

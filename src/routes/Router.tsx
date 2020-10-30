@@ -28,7 +28,7 @@ const router: React.FC<ConnectList> = ({ route }) => {
               sessionStorage.getItem('isLogin') === 'true' ? (
                 <MainLayout>
                   <Switch>
-                    {route.map((item: Routes) => (
+                    {route?.map((item: Routes) => (
                       <Route
                         key={item.path}
                         exact
