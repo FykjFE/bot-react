@@ -27,7 +27,7 @@ declare module '*.png' {
   const path: string;
   export default path;
 }
-declare module '*.scss' {
+declare module '*.less' {
   const styles: Record<string, string>;
   export default styles;
 }

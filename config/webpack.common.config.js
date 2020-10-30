@@ -38,7 +38,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+              importLoaders: 3,
               modules: {
                 exportLocalsConvention: 'camelCaseOnly',
               },
@@ -64,7 +64,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+              importLoaders: 3,
               modules: false,
               sourceMap: isDev,
             },
@@ -72,26 +72,27 @@ module.exports = {
           { loader: 'less-loader', options: { sourceMap: isDev } },
         ],
       },
-      // {
-      //   test: /\.less$/,
-      //   include: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: 'style-loader',
-      //     },
-      //     {
-      //       loader: 'css-loader',
-      //     },
-      //     {
-      //       loader: 'less-loader',
-      //       options: {
-      //         lessOptions: {
-      //           javascriptEnabled: true,
-      //         },
-      //       },
-      //     },
-      //   ],
-      // },
+      // antd包处理
+      {
+        test: /\.less$/,
+        include: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
+        ],
+      },
       {
         test: /\.svg$/,
         include: path.resolve(__dirname, '../src/assets/svg'),

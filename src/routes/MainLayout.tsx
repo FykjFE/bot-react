@@ -80,8 +80,8 @@ const MainLayout: React.FC = ({ children }) => {
             style={{ minHeight: '100vh' }}
             width={200}
           >
-            <div style={{ textAlign: 'center' }}>
-              <Svg className={styles.logo} name='logo' height='58px' />
+            <div style={{ textAlign: 'center', display: 'flex', alignItems: 'center' }}>
+              <Svg className={styles.logo} name='logo' size='60px' color={'#1296db'} />
               {!collapsed && (
                 <a onClick={() => history.push('/')} style={{ color: '#fff' }}>
                   React管理系统
