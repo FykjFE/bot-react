@@ -56,7 +56,7 @@ module.exports = {
       {
         test: lessRegex,
         exclude: lessModuleRegex,
-        include: path.resolve(__dirname, '../src'),
+        include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../node_modules')],
         use: [
           {
             loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -69,26 +69,13 @@ module.exports = {
               sourceMap: isDev,
             },
           },
-          { loader: 'less-loader', options: { sourceMap: isDev } },
-        ],
-      },
-      // antd包处理
-      {
-        test: /\.less$/,
-        include: /node_modules/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
           {
             loader: 'less-loader',
             options: {
               lessOptions: {
                 javascriptEnabled: true,
               },
+              sourceMap: isDev,
             },
           },
         ],
