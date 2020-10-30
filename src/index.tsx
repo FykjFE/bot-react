@@ -4,17 +4,14 @@ import { Provider } from 'react-redux';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import App from './App';
-import { persistor, store } from './store/store';
 import 'styles/global.less';
 import 'dayjs/locale/zh-cn';
-import { PersistGate } from 'redux-persist/integration/react';
+import { initStore } from 'utils/dva';
 
 ReactDOM.render(
   <ConfigProvider locale={zhCN}>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <App />
-      </PersistGate>
+    <Provider store={initStore()}>
+      <App />
     </Provider>
   </ConfigProvider>,
   document.getElementById('root'),
