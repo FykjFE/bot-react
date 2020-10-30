@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'styles/svg.module.scss';
+import styles from 'styles/svg.module.less';
 import classnames from 'classnames';
 const reqSvgs = require.context(`../assets/svg/`, true, /\.svg$/);
 reqSvgs.keys().forEach(reqSvgs);
