@@ -5,7 +5,7 @@ import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import App from './App';
 import { persistor, store } from './store/store';
-import 'styles/global.scss';
+import 'styles/global.less';
 import 'dayjs/locale/zh-cn';
 import { PersistGate } from 'redux-persist/integration/react';
 

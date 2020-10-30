@@ -3,7 +3,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import MainLayout from './MainLayout';
 import NoMatch from '../components/NoMatch';
 import { Spin } from 'antd';
-import styles from 'styles/layout.module.scss';
+import styles from 'styles/layout.module.less';
 import { connect } from 'react-redux';
 
 interface ConnectList {

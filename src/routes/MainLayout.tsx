@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Affix, Dropdown, Layout, Menu } from 'antd';
-import styles from 'styles/layout.module.scss';
+import styles from 'styles/layout.module.less';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import Svg from '../components/Svg';
 import Icon from '../components/Icon';

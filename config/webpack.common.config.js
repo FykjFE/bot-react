@@ -7,8 +7,8 @@ const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
-const scssRegex = /\.(scss)$/;
-const scssModuleRegex = /\.module\.(scss)$/;
+const lessRegex = /\.(less)$/;
+const lessModuleRegex = /\.module\.(less)$/;
 
 module.exports = {
   entry: {
@@ -29,7 +29,7 @@ module.exports = {
         include: path.resolve(__dirname, '../src'),
       },
       {
-        test: scssModuleRegex,
+        test: lessModuleRegex,
         include: path.resolve(__dirname, '../src'),
         use: [
           {
@@ -46,7 +46,7 @@ module.exports = {
             },
           },
           {
-            loader: 'sass-loader',
+            loader: 'less-loader',
             options: {
               sourceMap: isDev,
             },
@@ -54,8 +54,8 @@ module.exports = {
         ],
       },
       {
-        test: scssRegex,
-        exclude: scssModuleRegex,
+        test: lessRegex,
+        exclude: lessModuleRegex,
         include: path.resolve(__dirname, '../src'),
         use: [
           {
@@ -69,31 +69,50 @@ module.exports = {
               sourceMap: isDev,
             },
           },
-          { loader: 'sass-loader', options: { sourceMap: isDev } },
+          { loader: 'less-loader', options: { sourceMap: isDev } },
         ],
       },
+      // {
+      //   test: /\.less$/,
+      //   include: /node_modules/,
+      //   use: [
+      //     {
+      //       loader: 'style-loader',
+      //     },
+      //     {
+      //       loader: 'css-loader',
+      //     },
+      //     {
+      //       loader: 'less-loader',
+      //       options: {
+      //         lessOptions: {
+      //           javascriptEnabled: true,
+      //         },
+      //       },
+      //     },
+      //   ],
+      // },
       {
-        test: /\.less$/,
-        include: /node_modules/,
+        test: /\.svg$/,
+        include: path.resolve(__dirname, '../src/assets/svg'),
         use: [
           {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'less-loader',
+            loader: 'svg-sprite-loader',
             options: {
-              lessOptions: {
-                javascriptEnabled: true,
-              },
+              symbolId: '[name]',
+            },
+          },
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [{ removeAttrs: { attrs: 'fill' } }],
             },
           },
         ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
+        exclude: path.resolve(__dirname, '../src/assets/svg'),
         use: [
           {
             loader: 'url-loader',

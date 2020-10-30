@@ -12,21 +12,13 @@
     "moduleResolution": "node",
     "baseUrl": "./src",
     "paths": {
-      "component": [
-        "component/*"
-      ]
+      "component": ["component/*"]
     },
-    "types": [
-      "node",
-      "webpack-env"
-    ],
+    "types": ["node", "webpack-env"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": [
-    "config",
-    "commitlint.config.js"
-  ]
+  "exclude": ["config", "commitlint.config.js"]
 }

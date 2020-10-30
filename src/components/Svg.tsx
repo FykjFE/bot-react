@@ -1,14 +1,20 @@
 import React from 'react';
-
+import styles from 'styles/svg.module.less';
+import classnames from 'classnames';
 const reqSvgs = require.context(`../assets/svg/`, true, /\.svg$/);
-const all = reqSvgs.keys();
+reqSvgs.keys().forEach(reqSvgs);
 
 interface SvgProp {
+  // svg名字
   readonly name: string;
-  readonly scale?: number;
-  readonly width?: string;
-  readonly height?: string;
+  // svg大小，对应字体大小
+  readonly size?: string;
+  // svg颜色
+  readonly color?: string;
+  // 自定义class
   readonly className?: string;
+  // 自定义样式
+  readonly style?: Record<string, any>;
 }
 
 /**
@@ -17,25 +23,14 @@ interface SvgProp {
  * @constructor
  */
 const Svg: React.FC<SvgProp> = (props) => {
-  const { name, scale, width, height, className } = props;
-  const icon = all.find((item: string) => item === `./${name}.svg`);
+  const { name, color, size, className, style } = props;
   return (
-    <>
-      {icon ? (
-        <img
-          className={className}
-          style={{ transform: `scale(${scale})`, width, height }}
-          src={reqSvgs(icon)}
-          alt={`${name}.svg`}
-        />
-      ) : (
-        <img
-          style={{ transform: `scale(${scale})`, width, height }}
-          src={reqSvgs('./error.svg')}
-          alt='error.svg'
-        />
-      )}
-    </>
+    <svg
+      style={{ color: color, fontSize: size, ...style }}
+      className={classnames(styles.icon, className)}
+    >
+      <use xlinkHref={`#icon-${name}`} />
+    </svg>
   );
 };
 
