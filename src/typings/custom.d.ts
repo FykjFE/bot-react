@@ -28,8 +28,8 @@ declare module '*.png' {
   export default path;
 }
 declare module '*.less' {
-  const styles: Record<string, string>;
-  export default styles;
+  const classes: Record<string, string>;
+  export default classes;
 }
 declare module 'classnames';
 interface BaseAction<T> {

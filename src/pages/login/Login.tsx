@@ -3,7 +3,7 @@ import styles from 'styles/login.module.less';
 import { useHistory } from 'react-router-dom';
 import { Button, Form, Input } from 'antd';
 import Svg from 'components/Svg';
-import { POST_LOGIN } from 'services/user.service';
+import { POST_LOGIN } from 'api/user.service';
 import { User } from 'typings/user';
 import { useDispatch } from 'react-redux';
 import { login } from 'store/actions/user';
