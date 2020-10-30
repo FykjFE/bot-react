@@ -6,7 +6,6 @@ import Svg from 'components/Svg';
 import { POST_LOGIN } from 'api/user.service';
 import { User } from 'typings/user';
 import { useDispatch } from 'react-redux';
-import { login } from 'store/actions/user';
 
 function Login(): JSX.Element {
   const history = useHistory();
@@ -22,7 +21,7 @@ function Login(): JSX.Element {
     if (code === 0) {
       sessionStorage.setItem('token', String(token));
       sessionStorage.setItem('isLogin', String(true));
-      dispatch(login());
+      dispatch({ type: 'user/login' });
       history.push('/');
       setLoading(false);
     } else {

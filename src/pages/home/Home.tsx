@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import Demo from './Demo';
+
 function Home(): JSX.Element {
   const [user, setUser] = useState({ name: 'aaa', age: 11 });
   return (

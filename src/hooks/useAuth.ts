@@ -1,10 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'store/reducers';
-import { asyncSetUser, logout } from 'store/actions/user';
-import { asyncSetRoutes, clearRoute } from '../store/actions/routes';
-import { User } from '../store/constants/user';
-import { Routes } from '../store/constants/routes';
+import { User } from '../models/user';
+import { RootState } from '../utils/dva';
 
 function useAuth(): { user: User; route: Routes[] } {
   const user = useSelector((state: RootState) => state.user);
@@ -13,11 +10,11 @@ function useAuth(): { user: User; route: Routes[] } {
 
   useEffect(() => {
     if (user.isLogin) {
-      dispatch(asyncSetUser());
-      dispatch(asyncSetRoutes());
+      dispatch({ type: 'user/fetchInfo' });
+      dispatch({ type: 'route/setRoutes' });
     } else {
-      dispatch(logout());
-      dispatch(clearRoute());
+      dispatch({ type: 'user/logout' });
+      dispatch({ type: 'route/clearRoutes' });
     }
   }, [dispatch, user.isLogin]);
   return { user, route };

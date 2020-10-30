@@ -4,10 +4,7 @@ import styles from 'styles/layout.module.less';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import Svg from '../components/Svg';
 import Icon from '../components/Icon';
-import { Routes } from '../store/constants/routes';
-import { clearRoute } from 'store/actions/routes';
 import { useDispatch } from 'react-redux';
-import { logout } from '../store/actions/user';
 import list2tree from '../utils/list2tree';
 import useAuth from '../hooks/useAuth';
 
@@ -37,8 +34,8 @@ const MainLayout: React.FC = ({ children }) => {
 
   function doLogout() {
     sessionStorage.clear();
-    dispatch(logout());
-    dispatch(clearRoute());
+    dispatch({ type: 'user/logout' });
+    dispatch({ type: 'route/clearRoutes' });
     history.push('/login');
   }
 
