@@ -93,7 +93,26 @@ module.exports = {
         ],
       },
       {
+        test: /\.svg$/,
+        include: path.resolve(__dirname, '../src/assets/svg'),
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+            options: {
+              symbolId: '[name]',
+            },
+          },
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [{ removeAttrs: { attrs: 'fill' } }],
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
+        exclude: path.resolve(__dirname, '../src/assets/svg'),
         use: [
           {
             loader: 'url-loader',

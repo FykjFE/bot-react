@@ -46,6 +46,7 @@
   "dependencies": {
     "antd": "^4.7.2",
     "axios": "^0.20.0",
+    "classnames": "^2.2.6",
     "dayjs": "^1.9.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -106,6 +107,8 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
     "stylelint-order": "^4.1.0",
+    "svg-sprite-loader": "^5.0.0",
+    "svgo-loader": "^2.2.1",
     "terser-webpack-plugin": "^4.2.3",
     "thread-loader": "^3.0.0",
     "tsconfig-paths-webpack-plugin": "^3.3.0",

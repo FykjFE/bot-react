@@ -1,6 +1,6 @@
 declare module '*.svg' {
-  const src: string;
-  export default src;
+  const content: any;
+  export default content;
 }
 
 declare module '*.bmp' {
@@ -31,7 +31,7 @@ declare module '*.scss' {
   const styles: Record<string, string>;
   export default styles;
 }
-
+declare module 'classnames';
 interface BaseAction<T> {
   type: string;
   payload: T;
