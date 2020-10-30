@@ -1,10 +1,9 @@
 import http from '../utils/http';
-import { User } from '../interfaces/user';
-import { AxiosPromise } from 'axios';
+import { User } from '../typings/user';
 
-export const POST_LOGIN = (data: User): AxiosPromise<Res<any>> => {
+export const POST_LOGIN = (data: User): Promise<Res<any>> => {
   return http('post', '/user/login', { data });
 };
-export const GET_USER_INFO = (): AxiosPromise<Res<any>> => {
+export const GET_USER_INFO = (): Promise<Res<any>> => {
   return http('get', '/user/getUserInfo');
 };

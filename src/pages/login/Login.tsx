@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import styles from 'styles/login.module.scss';
+import styles from 'styles/login.module.less';
 import { useHistory } from 'react-router-dom';
 import { Button, Form, Input } from 'antd';
 import Svg from 'components/Svg';
 import { POST_LOGIN } from 'services/user.service';
-import { User } from 'interfaces/user';
+import { User } from 'typings/user';
 import { useDispatch } from 'react-redux';
 import { login } from 'store/actions/user';
 
@@ -35,7 +35,7 @@ function Login(): JSX.Element {
   }, []);
   return (
     <div className={styles.login}>
-      <Svg className={styles.logo} width={'200px'} name={'logo'} />
+      <Svg size='120px' color='#1296db' className={styles.logo} name={'logo'} />
       <Form
         size={'large'}
         style={{ width: '20%' }}
