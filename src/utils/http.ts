@@ -1,10 +1,9 @@
 import axios, { AxiosRequestConfig, Method } from 'axios';
 import { message } from 'antd';
-import baseUrl from './index';
-
+import envconfig from '../../env';
 const msg = new Map([[405, '请求类型错误']]);
 const instance = axios.create({
-  baseURL: process.env.NODE_ENV === 'development' ? '/api' : baseUrl,
+  baseURL: process.env.NODE_ENV === 'development' ? '/api' : envconfig.baseUrl,
   timeout: 10000,
   headers: { 'Content-Type': 'application/json;charset=UTF-8' },
   validateStatus: function () {

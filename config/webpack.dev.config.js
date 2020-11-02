@@ -2,8 +2,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.config');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const os = require('os');
-const baseUrl = 'https://api.zzfzzf.com';
-
+const envconfig = require('../env');
 let needHost = '';
 try {
   let network = os.networkInterfaces();
@@ -35,7 +34,7 @@ module.exports = merge(common, {
     stats: 'errors-only',
     proxy: {
       '/api': {
-        target: baseUrl,
+        target: envconfig.baseUrl,
         changeOrigin: true,
         pathRewrite: { '^/api': '' },
       },
