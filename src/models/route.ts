@@ -1,50 +1,20 @@
 import { GET_USER_INFO } from 'api/user.service';
 import { GET_MENU_LIST } from 'api/menu.service';
-export interface Routes {
-  path: string;
-  name: string;
-  icon: string;
-  children: Routes[];
-  hidden: boolean;
-  component: string;
-}
-interface Action {
-  payload: any;
-}
 
-interface Effect {
-  put?: any;
-  call?: any;
-  select?: any;
-}
-
-interface GlobalType {
-  namespace: string;
-  state: Record<string, any>;
-  reducers: {
-    set: (state: any, effect: any) => any;
-  };
-  effects: {
-    clearRoutes: (action: Action, effect: Effect) => Generator;
-    setRoutes: (action: Action, effect: Effect) => Generator;
-  };
-}
-
-export const route: GlobalType = {
+export const route = {
   namespace: 'route',
   state: [],
   reducers: {
-    set(state, { payload }) {
+    set(state: any, { payload }: any) {
       return payload;
     },
   },
   effects: {
-    *clearRoutes({ payload }, { put, call }) {
+    *clearRoutes({ payload }: any, { put, call }: any) {
       yield call(GET_USER_INFO);
       yield put({ type: 'setUserStatus', payload: true });
     },
-    *setRoutes(action, { put, call }) {
-      // @ts-ignore
+    *setRoutes(action: any, { put, call }: any) {
       const { data } = yield call(GET_MENU_LIST);
       yield put({ type: 'set', payload: data });
     },

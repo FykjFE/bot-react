@@ -19,7 +19,7 @@ function Login(): JSX.Element {
       data: { token },
     } = await POST_LOGIN({ ...values });
     if (code === 0) {
-      sessionStorage.setItem('token', String(token));
+      sessionStorage.setItem('uid', String(token));
       sessionStorage.setItem('isLogin', String(true));
       dispatch({ type: 'user/login' });
       history.push('/');

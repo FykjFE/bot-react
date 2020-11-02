@@ -13,8 +13,8 @@ const instance = axios.create({
 });
 instance.interceptors.request.use(
   (config) => {
-    config.headers.Authorization = sessionStorage.getItem('token')
-      ? `Bearer ${sessionStorage.getItem('token')}`
+    config.headers.Authorization = sessionStorage.getItem('uid')
+      ? `Bearer ${sessionStorage.getItem('uid')}`
       : '';
     return config;
   },

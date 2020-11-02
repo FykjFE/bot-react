@@ -1,57 +1,28 @@
 import { GET_USER_INFO } from 'api/user.service';
-export interface User {
-  isLogin?: boolean;
-  info?: any;
-}
-interface Action {
-  payload: any;
-}
 
-interface Effect {
-  put?: any;
-  call?: any;
-  select?: any;
-}
-
-interface GlobalType {
-  namespace: string;
-  state: Record<string, any>;
-  reducers: {
-    setUserInfo: (state: any, effect: any) => any;
-    setUserStatus: (state: any, effect: any) => any;
-  };
-  effects: {
-    login: (action: Action, effect: Effect) => Generator;
-    logout: (action: Action, effect: Effect) => Generator;
-    fetchInfo: (action: Action, effect: Effect) => Generator;
-  };
-}
-
-export const user: GlobalType = {
+export const user = {
   namespace: 'user',
   state: {
     isLogin: false,
     info: {},
   },
   reducers: {
-    setUserInfo(state, { payload }) {
+    setUserInfo(state: any, { payload }: any) {
       return { ...state, info: payload };
     },
-    setUserStatus(state, { payload }) {
+    setUserStatus(state: any, { payload }: any) {
       return { ...state, isLogin: payload };
     },
   },
   effects: {
-    *login({ payload }, { put, call }) {
-      console.log('a');
+    *login({ payload }: any, { put, call }: any) {
       yield call(GET_USER_INFO);
       yield put({ type: 'setUserStatus', payload: true });
     },
-    *logout({ payload }, { put }) {
+    *logout({ payload }: any, { put }: any) {
       yield put({ type: 'setUserStatus', payload: false });
     },
-    *fetchInfo({ payload }, { put, call }) {
-      // @ts-ignore
+    *fetchInfo({ payload }: any, { put, call }: any) {
       const { data } = yield call(GET_USER_INFO);
       yield put({ type: 'setUserInfo', payload: data });
     },
