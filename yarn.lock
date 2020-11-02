@@ -1142,6 +1142,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fykj/dva-plus@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@fykj/dva-plus/-/dva-plus-1.0.0.tgz#d6997333704f79f097d2ab94b33819c68cf9d7ec"
+  integrity sha512-IWq6zTQuuAchqQkxd9ei4DXlFBpsGFtcaTkR/cjhYRNI6+d29ndFReQ99AJ2fYkLNFQAUdbOLCr+2Xzde64kYw==
+  dependencies:
+    dva-core "^2.0.3"
+    lodash "^4.17.20"
+    redux "^4.0.5"
+    store "^2.0.12"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -8355,7 +8365,7 @@ redux-saga@^0.16.0:
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
   integrity sha512-iIjKnRThI5sKPEASpUvySemjzwqwI13e3qP7oLub+FycCRDysLSAOwt958niZW6LhxfmS6Qm1BzbU70w/Koc4w==
 
-redux@^4.0.0:
+redux@^4.0.0, redux@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
   integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
