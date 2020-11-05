@@ -32,8 +32,7 @@ declare module '*.less' {
   export default classes;
 }
 declare module 'classnames';
-declare module 'dva-core';
-declare module 'dva-model-persist';
+
 interface BaseAction<T> {
   type: string;
   payload: T;
