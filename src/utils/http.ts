@@ -39,5 +39,8 @@ export default async function http(
   config?: AxiosRequestConfig,
 ): Promise<Res<any>> {
   const { data } = await instance(url, { ...config, method });
+  if (data.code === 4001) {
+    window.location.href = '/login';
+  }
   return data;
 }
