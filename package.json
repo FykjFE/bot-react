@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@fykj/dva-plus": "^1.0.7",
+    "@loadable/component": "^5.14.1",
     "antd": "^4.8.0",
     "axios": "^0.20.0",
     "classnames": "^2.2.6",
