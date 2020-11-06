@@ -1,13 +1,14 @@
 import React from 'react';
 interface State {
   hasError: boolean;
+  info: string;
 }
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 class ErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, info: '' };
   }
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -17,6 +18,7 @@ class ErrorBoundary extends React.Component<Props, State> {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   componentDidCatch(error: any, errorInfo: any) {
+    this.setState({ info: error.toString() });
     console.log(error, errorInfo);
   }
 
@@ -35,6 +37,7 @@ class ErrorBoundary extends React.Component<Props, State> {
         >
           <a href='/'>首页</a>
           <h1>Something went wrong.</h1>
+          <p>{this.state.info}</p>
         </div>
       );
     }
