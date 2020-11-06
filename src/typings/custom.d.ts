@@ -32,6 +32,7 @@ declare module '*.less' {
   export default classes;
 }
 declare module 'classnames';
+declare module '@loadable/component';
 
 interface BaseAction<T> {
   type: string;
