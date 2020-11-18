@@ -1,8 +1,5 @@
 import { GET_USER_INFO } from 'api/user.service';
-export type User = {
-  isLogin: boolean;
-  info: any;
-};
+
 export const user = {
   namespace: 'user',
   state: {
@@ -10,22 +7,22 @@ export const user = {
     info: {},
   },
   reducers: {
-    setUserInfo(state: any, { payload }: any) {
+    setUserInfo(state, { payload }) {
       return { ...state, info: payload };
     },
-    setUserStatus(state: any, { payload }: any) {
+    setUserStatus(state, { payload }) {
       return { ...state, isLogin: payload };
     },
   },
   effects: {
-    *login({ payload }: any, { put, call }: any) {
+    *login({ payload }, { put, call }) {
       yield call(GET_USER_INFO);
       yield put({ type: 'setUserStatus', payload: true });
     },
-    *logout({ payload }: any, { put }: any) {
+    *logout({ payload }, { put }) {
       yield put({ type: 'setUserStatus', payload: false });
     },
-    *fetchInfo({ payload }: any, { put, call }: any) {
+    *fetchInfo({ payload }, { put, call }) {
       const { data } = yield call(GET_USER_INFO);
       yield put({ type: 'setUserInfo', payload: data });
     },

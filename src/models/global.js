@@ -4,14 +4,13 @@ export const global = {
     num: 0,
   },
   reducers: {
-    plus(state: any, { payload }: any) {
+    plus(state, { payload }) {
       return { ...state, num: state.num + payload };
     },
   },
   effects: {
-    *handlePlus({ payload }: any, { put }: any) {
+    *handlePlus({ payload }, { put }) {
       yield put({ type: 'plus', payload });
     },
   },
 };
-export type GlobalState = Readonly<typeof global>;
