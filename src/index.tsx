@@ -11,7 +11,7 @@ import { initStore } from '@fykj/dva-plus';
 
 ReactDOM.render(
   <ConfigProvider locale={zhCN}>
-    <Provider store={initStore(models, { key: 'fykj' })}>
+    <Provider store={initStore(models, { key: 'bt' })}>
       <App />
     </Provider>
   </ConfigProvider>,

@@ -5,19 +5,18 @@ export const route = {
   namespace: 'route',
   state: [],
   reducers: {
-    set(state: any, { payload }: any) {
+    set(state, { payload }) {
       return payload;
     },
   },
   effects: {
-    *clearRoutes({ payload }: any, { put, call }: any) {
+    *clearRoutes({ payload }, { put, call }) {
       yield call(GET_USER_INFO);
       yield put({ type: 'setUserStatus', payload: true });
     },
-    *setRoutes(action: any, { put, call }: any) {
+    *setRoutes(action, { put, call }) {
       const { data } = yield call(GET_MENU_LIST);
       yield put({ type: 'set', payload: data });
     },
   },
 };
-export type GlobalState = Readonly<typeof global>;
