@@ -1,5 +1,8 @@
 import { GET_USER_INFO } from 'api/user.service';
-
+export type User = {
+  isLogin: boolean;
+  info: any;
+};
 export const user = {
   namespace: 'user',
   state: {
