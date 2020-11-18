@@ -20,4 +20,3 @@ export const route = {
     },
   },
 };
-export type GlobalState = Readonly<typeof global>;

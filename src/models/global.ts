@@ -1,31 +1,15 @@
-interface Action {
-  payload: any;
-}
-interface Effect {
-  put: any;
-}
-interface GlobalType {
-  namespace: string;
-  state: Record<string, any>;
-  reducers: {
-    plus: (state: Record<string, any>, aciton: Action) => any;
-  };
-  effects: {
-    handlePlus: (action: Action, effect: Effect) => Generator;
-  };
-}
-export const global: GlobalType = {
+export const global = {
   namespace: 'global',
   state: {
     num: 0,
   },
   reducers: {
-    plus(state, { payload }) {
+    plus(state: any, { payload }: any) {
       return { ...state, num: state.num + payload };
     },
   },
   effects: {
-    *handlePlus({ payload }, { put }) {
+    *handlePlus({ payload }: any, { put }: any) {
       yield put({ type: 'plus', payload });
     },
   },

@@ -28,4 +28,3 @@ export const user = {
     },
   },
 };
-export type GlobalState = Readonly<typeof global>;
