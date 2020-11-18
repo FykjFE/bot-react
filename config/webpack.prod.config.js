@@ -10,6 +10,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = merge(base, {
   mode: 'production',
   devtool: false,
+  stats: 'errors-only',
   bail: true,
   plugins: [
     new OptimizeCssAssetsPlugin({
